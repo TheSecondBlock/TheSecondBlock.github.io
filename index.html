@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>首页 - TheSecondBlock的站点</title>
+    <link rel="stylesheet" type="text/css" href="css/main.css"/>
+    <script src="./js/main.js"></script>
+    <style type="text/css">
+    @font-face{
+            font-family: myFont;
+            src:url('./fonts/HarmonyOS_Sans_Black.woff');
+            src:url('./fonts/HarmonyOS_Sans_SC_Black.ttf')
+        }
+        body{
+            font-family: myFont;
+        }
+    </style>
+</head>
+<body>
+    </div>
+    <p class="hitokoto"><a href="#" id="hitokoto_text">:D 获取中...</a></p>
+    <script>
+        fetch('https://v1.hitokoto.cn')
+          .then(response => response.json())
+          .then(data => {
+            const hitokoto = document.getElementById('hitokoto_text')
+            hitokoto.href = 'https://hitokoto.cn/?uuid=' + data.uuid
+            hitokoto.innerText = data.hitokoto
+          })
+          .catch(console.error)
+      </script>
+    <div class="friend-link">
+        友情链接
+        <ui>
+            <li><a href="www.314669.xyz" target="_blank">西瓜博客</a></li>
+        </ui>
+    </div>
+    <div>
+
+    </div>
+    本站已运行：
+	<script>
+        function show_date_time(){
+	window.setTimeout("show_date_time()", 1000);
+	BirthDay=new Date("05-19-2022 19:26:00");//建站日期
+	today=new Date();
+	timeold=(today.getTime()-BirthDay.getTime());
+	sectimeold=timeold/1000
+	secondsold=Math.floor(sectimeold);
+	msPerDay=24*60*60*1000
+	e_daysold=timeold/msPerDay
+	daysold=Math.floor(e_daysold);
+	e_hrsold=(daysold-e_daysold)*-24;
+	hrsold=Math.floor(e_hrsold);
+	e_minsold=(hrsold-e_hrsold)*-60;
+	minsold=Math.floor((hrsold-e_hrsold)*-60);
+	seconds=Math.floor((minsold-e_minsold)*-60);
+	momk.innerHTML=daysold+"天"+hrsold+"小时"+minsold+"分"+seconds+"秒" ;
+	}
+	show_date_time();
+    </script>
+    <div>
+        <!--版权-->
+        Copyright © 2021-2022 TheSecondBlock Powered by TheSecondBlock
+    </div>
+<!--返回顶部代码-->
+    <div>
+        <a class="bottom" href="#">回到顶部</a>
+    </div>
+</body>
+</html>
